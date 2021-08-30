@@ -1,4 +1,4 @@
-# xxteadecrypt
+# xxteadec
 ## How to build
 ```
 git clone https://github.com/gitterrost4/xxteadec.git
