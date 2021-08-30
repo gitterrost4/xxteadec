@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.11)
+project(xxteadec)
+add_library(xxtea xxtea.c xxtea.h)
+add_executable(xxteadec xxteadec.c)
+target_link_libraries(xxteadec PRIVATE xxtea)
