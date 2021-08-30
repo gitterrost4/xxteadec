@@ -17,11 +17,15 @@ int main(int argc, char *argv[]) {
     fclose(f);
 
     text[fsize] = 0;
-    size_t len;
+    size_t len=0;
     char *decrypt_data="";
     //unsigned char *encrypt_data = xxtea_encrypt(text, strlen(text), key, &len);
     decrypt_data = xxtea_decrypt(text, fsize, key, &len);
     //free(encrypt_data);
+    if(len == 0) {
+      fprintf( stderr, "Input file does not seem to be encrypted with xxtea, or the key is wrong.\n");
+      return 1;
+    }
     FILE *outf = fopen(outFileName, "wb");
     fwrite(decrypt_data,len,1,outf);
     fclose(outf);
