@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <argp.h>
-#include <xxtea.h>
+#include "xxtea.h"
 
 struct arguments
 {
